@@ -5,11 +5,27 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:layout_gravity="center_vertical"
+    android:background="@color/PowderBlue"
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width=""
-        android:layout_height=""/>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@color/white"
+            android:text="0"
+            android:textSize="30dp"
+            android:textColor="@color/DarkSlateGray"
+            android:gravity="left|bottom"
+            android:layout_gravity="fill_horizontal" />
 
 
 
