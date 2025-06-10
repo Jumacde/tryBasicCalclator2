@@ -31,4 +31,15 @@ public class Display_impl implements Display {
         this.calcStep = calcStep;
     }
 
+    // wrap method
+    @Override
+    public void callShowCalcStep() {
+
+    }
+
+    private String showCalcStep() {
+
+        return calcStep;
+    }
+
 }

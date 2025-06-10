@@ -6,4 +6,6 @@ public interface Display {
     void setDisplay();
     void setCalcStep();
 
+    void callShowCalcStep(); // wrap method
+
 }
