@@ -15,5 +15,5 @@ public interface Calc {
 
     void clear();
     // wrap method
-    void callCalcResult(String operator);
+    void callCalcResult(Operator operator);
 }

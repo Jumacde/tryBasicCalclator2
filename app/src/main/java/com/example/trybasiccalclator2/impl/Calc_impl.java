@@ -1,6 +1,7 @@
 package com.example.trybasiccalclator2.impl;
 
 import com.example.trybasiccalclator2.Calc;
+import com.example.trybasiccalclator2.Operator;
 
 public class Calc_impl implements Calc {
     private double cNum; // inputted current number
@@ -78,7 +79,7 @@ public class Calc_impl implements Calc {
      * @ Param: operator: +, -, *, /
      * **/
     @Override
-    public void callCalcResult(String operator) {
+    public void callCalcResult(Operator operator) {
         calcResult(operator);
     }
 
@@ -89,22 +90,20 @@ public class Calc_impl implements Calc {
      * use the String operator from the class Operator_impl
      * to avoid cross-reference issues
      **/
-    private void calcResult(String operator) {
-        if (operator.isEmpty()) {
+    private void calcResult(Operator operator) {
+        String op = operator.getSOpe();
+        if (op.isEmpty()) {
             return;
         }
-        if (operator.equals("+")) {
-            calcStep = String.valueOf(sNum) + " + " + String.valueOf(cNum);
+        if (op.equals("+")) {
             result = sNum + cNum;
-        } else if (operator.equals("-")) {
-            calcStep = String.valueOf(sNum) + " - " + String.valueOf(cNum);
+        } else if (op.equals("-")) {
             result = sNum - cNum;
-        } else if (operator.equals("*")) {
-            calcStep = String.valueOf(sNum) + " * " + String.valueOf(cNum);
+        } else if (op.equals("*")) {
             result = sNum * cNum;
-        } else if (operator.equals("/")) {
-            calcStep = String.valueOf(sNum) + " / " + String.valueOf(cNum);
+        } else if (op.equals("/")) {
             result = sNum / cNum;
         }
+        calcStep = String.valueOf(sNum) + op + String.valueOf(cNum);
     }
 }
