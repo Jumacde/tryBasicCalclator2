@@ -23,11 +23,11 @@ public class Display_impl implements Display {
 
     // wrap method
     @Override
-    public void callShowDigit(Calc calc, Operator operator, int digit) {
-        showDigit(calc, operator, digit);
+    public void callShowDisplay(Calc calc, Operator operator, int digit) {
+        showDisplay(calc, operator, digit);
     }
 
-    private void showDigit(Calc calc, Operator operator, int digit) {
+    private void showDisplay(Calc calc, Operator operator, int digit) {
         String sOpe = operator.getSOpe();
         double sNum = calc.getSNum();
         double cNum = calc.getCNum();
