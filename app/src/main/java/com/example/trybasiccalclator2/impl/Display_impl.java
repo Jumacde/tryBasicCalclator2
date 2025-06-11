@@ -29,6 +29,12 @@ public class Display_impl implements Display {
         showDigit(calc, operator, digit);
     }
 
+    // wrap method
+    @Override
+    public void callShowOp(Calc calc, Operator operator) {
+        ShowOp(calc, operator);
+    }
+
     private void showDigit(Calc calc, Operator operator, int digit) {
         String sOpe = operator.getSOpe();
         if (sOpe.isEmpty()) {
@@ -47,8 +53,11 @@ public class Display_impl implements Display {
                     || display.endsWith("/")) {
                 display += digit;
             }
-
         }
+    }
+
+    private void ShowOp(Calc calc, Operator operator) {
+
     }
 
 }
