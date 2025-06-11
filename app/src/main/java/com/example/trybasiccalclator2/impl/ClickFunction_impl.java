@@ -17,10 +17,14 @@ public class ClickFunction_impl implements ClickFunction {
 
     private void digitClick(Calc calc, Operator operator, Display display, int digit) {
         boolean isInputNum = calc.getIsInputNum();
+        double cNum = calc.getCNum();
         if (isInputNum) {
             calc.setSNum(digit);
             calc.setIsInputNum(false);
-
+            display.callShowDisplay(calc, operator, digit);
+        } else {
+            calc.setCNum(cNum * 10 + digit);
+            display.callShowDisplay(calc, operator, digit);
         }
     }
 }
