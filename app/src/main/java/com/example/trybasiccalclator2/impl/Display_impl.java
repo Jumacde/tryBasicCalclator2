@@ -39,6 +39,7 @@ public class Display_impl implements Display {
 
         String calcStep = calc.getCalcStep();
         if (!sOpe.isEmpty() && sNum != 0) {
+            display += calcStep;
         }
     }
 
