@@ -37,9 +37,16 @@ public class Display_impl implements Display {
             display += cNum; // show the current number
         }
 
+        // show the calc-step on the display
         String calcStep = calc.getCalcStep();
         if (!sOpe.isEmpty() && sNum != 0) {
             display += calcStep;
+        }
+
+        // show the calc-step on the display
+        String result = String.valueOf(calc.getResult());
+        if (!sOpe.isEmpty() && sOpe.equals("=")) {
+            display += result;
         }
     }
 
