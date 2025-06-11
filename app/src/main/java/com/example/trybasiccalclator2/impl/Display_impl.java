@@ -21,10 +21,12 @@ public class Display_impl implements Display {
 
     // wrap method
     @Override
-    public void callShowDigit() {
-
+    public void callShowDigit(double cNum, double sNum, String operator, int digit) {
+        showDigit(cNum, sNum, operator, digit);
     }
 
-    private void showDigit() {}
+    private void showDigit(double cNum, double sNum, String Operator, int digit) {
+
+    }
 
 }
