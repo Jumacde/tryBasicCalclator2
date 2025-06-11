@@ -27,33 +27,21 @@ public class Display_impl implements Display {
         showDigit(calc, operator, digit);
     }
 
-    // wrap method
-    @Override
-    public void callShowCalcStep(Calc calc, Operator operator) {
-        ShowCalcStep(calc, operator);
-    }
-
     private void showDigit(Calc calc, Operator operator, int digit) {
         String sOpe = operator.getSOpe();
-        if (sOpe.isEmpty()) {
-            display += digit;
+        double sNum = calc.getSNum();
+        double cNum = calc.getCNum();
+        if (sOpe.isEmpty() && sNum != 0) { // if no operation is there
+            display += sNum; // show the stored number
+        } else if (sOpe.isEmpty() && cNum != 0) {
+            display += cNum; // show the current number
         }
 
         String calcStep = calc.getCalcStep();
-        if (!sOpe.isEmpty()) {
-            if (display.equals(calcStep)) {
-                display += String.valueOf(digit);
-            } else if (display.endsWith("+")
-                    || display.endsWith("-")
-                    || display.endsWith("*")
-                    || display.endsWith("/")) {
-                display += digit;
-            }
+        if (!sOpe.isEmpty() && sNum != 0) {
         }
     }
 
-    private void ShowCalcStep(Calc calc, Operator operator) {
 
-    }
 
 }
