@@ -45,11 +45,11 @@ public class MainActivity extends AppCompatActivity {
 
         updateDisplay();
 
-        pl.setOnClickListener(v -> clickFunction.callOperatorClick(calc, display, operator, "+"));
-        mi.setOnClickListener(v -> clickFunction.callOperatorClick(calc, display, operator, "-"));
-        mu.setOnClickListener(v -> clickFunction.callOperatorClick(calc, display, operator, "*"));
-        di.setOnClickListener(v -> clickFunction.callOperatorClick(calc, display, operator, "/"));
-        eq.setOnClickListener(v -> clickFunction.callOperatorClick(calc, display, operator, "="));
+        pl.setOnClickListener(v -> clickFunction.operatorClick(calc, display, operator, "+"));
+        mi.setOnClickListener(v -> clickFunction.operatorClick(calc, display, operator, "-"));
+        mu.setOnClickListener(v -> clickFunction.operatorClick(calc, display, operator, "*"));
+        di.setOnClickListener(v -> clickFunction.operatorClick(calc, display, operator, "/"));
+        eq.setOnClickListener(v -> clickFunction.operatorClick(calc, display, operator, "="));
 
 
     }
