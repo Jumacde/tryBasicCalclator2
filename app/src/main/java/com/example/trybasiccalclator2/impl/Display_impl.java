@@ -40,8 +40,6 @@ public class Display_impl implements Display {
         if (sOpe.isEmpty()) {
             return;
         }
-        double sNum = calc.getSNum();
-        double cNum = calc.getCNum();
         String calcStep = calc.getCalcStep();
 
         if (!sOpe.isEmpty()) {
