@@ -36,10 +36,10 @@ public class Display_impl implements Display {
     private void showDigit(Calc calc, Operator operator, int digit) {
         String sOpe = operator.getSOpe();
         if (sOpe.isEmpty()) {
-            return;
+            display += digit;
         }
-        String calcStep = calc.getCalcStep();
 
+        String calcStep = calc.getCalcStep();
         if (!sOpe.isEmpty()) {
             if (display.equals(calcStep)) {
                 display += String.valueOf(digit);
