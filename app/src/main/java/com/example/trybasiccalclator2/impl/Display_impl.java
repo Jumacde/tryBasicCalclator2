@@ -21,8 +21,10 @@ public class Display_impl implements Display {
 
     // wrap method
     @Override
-    public void callShowCalcStep() {
+    public void callShowDigit() {
 
     }
+
+    private void showDigit() {}
 
 }

@@ -11,11 +11,16 @@ public class ClickFunction_impl implements ClickFunction {
 
 
     @Override
-    public void callDigitClick(Calc calc, Operator operator, Display display) {
-        digitClick(calc, operator, display);
+    public void callDigitClick(Calc calc, Operator operator, Display display, int digit) {
+        digitClick(calc, operator, display digit);
     }
 
-    private void digitClick(Calc calc, Operator operator, Display display) {
+    private void digitClick(Calc calc, Operator operator, Display display, int digit) {
+        boolean isInputNum = calc.getIsInputNum();
+        if (isInputNum) {
+            calc.setSNum(digit);
+            calc.setIsInputNum(false);
 
-    };
+        }
+    }
 }
