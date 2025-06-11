@@ -28,7 +28,18 @@ public class Display_impl implements Display {
     }
 
     private void showDigit(Calc calc, Operator operator, int digit) {
+        String sOpe = operator.getSOpe();
+        if (sOpe.isEmpty()) {
+            return;
+        }
+        double sNum = calc.getSNum();
+        double cNum = calc.getCNum();
+        String calcStep = calc.getCalcStep();
 
+        if (!sOpe.isEmpty()) {
+            if (display.equals(calcStep)) {}
+
+        }
     }
 
 }
