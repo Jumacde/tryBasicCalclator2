@@ -4,6 +4,6 @@ public interface Display {
     String getDisplay();
     void setDisplay();
     // wrap methods
-    void callShowDigit(double cNum, double sNum, String operator, int digit); // wrap method
+    void callShowDigit(Calc calc, Operator operator, int digit); // wrap method
 
 }

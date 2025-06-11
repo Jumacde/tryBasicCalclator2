@@ -1,6 +1,8 @@
 package com.example.trybasiccalclator2.impl;
 
+import com.example.trybasiccalclator2.Calc;
 import com.example.trybasiccalclator2.Display;
+import com.example.trybasiccalclator2.Operator;
 
 public class Display_impl implements Display {
     private String display;
@@ -21,11 +23,11 @@ public class Display_impl implements Display {
 
     // wrap method
     @Override
-    public void callShowDigit(double cNum, double sNum, String operator, int digit) {
-        showDigit(cNum, sNum, operator, digit);
+    public void callShowDigit(Calc calc, Operator operator, int digit) {
+        showDigit(calc, operator, digit);
     }
 
-    private void showDigit(double cNum, double sNum, String Operator, int digit) {
+    private void showDigit(Calc calc, Operator operator, int digit) {
 
     }
 
