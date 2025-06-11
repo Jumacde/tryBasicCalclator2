@@ -16,7 +16,7 @@ public class ClickFunction_impl implements ClickFunction {
     }
 
     @Override
-    public void operatorClick(Calc calc, Operator operator, Display display) {
+    public void callOperatorClick(Calc calc, Operator operator, Display display) {
         operatorClick(calc, operator, display);
     }
 
