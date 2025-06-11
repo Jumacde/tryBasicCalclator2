@@ -12,7 +12,7 @@ public class ClickFunction_impl implements ClickFunction {
 
     @Override
     public void callDigitClick(Calc calc, Operator operator, Display display, int digit) {
-        digitClick(calc, operator, display digit);
+        digitClick(calc, operator, display, digit);
     }
 
     private void digitClick(Calc calc, Operator operator, Display display, int digit) {
