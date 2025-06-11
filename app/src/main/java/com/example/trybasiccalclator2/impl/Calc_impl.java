@@ -84,26 +84,27 @@ public class Calc_impl implements Calc {
 
     /**
      * method: define calculate rule.
+     *
      * @ param: operator
-     *  use the String operator from the class Operator_impl
-     *  to avoid cross-reference issues
-     * **/
-    private double calcResult(String operator) {
-        if (!operator.isEmpty()) {
-            if (operator.equals("+")) {
-                calcStep = String.valueOf(sNum) + " + " + String.valueOf(cNum);
-                result = sNum + cNum;
-            } else if (operator.equals("-")) {
-                calcStep = String.valueOf(sNum) + " - " + String.valueOf(cNum);
-                result = sNum - cNum;
-            } else if (operator.equals("*")) {
-                calcStep = String.valueOf(sNum) + " * " + String.valueOf(cNum);
-                result = sNum * cNum;
-            } else if (operator.equals("/")) {
-                calcStep = String.valueOf(sNum) + " / " + String.valueOf(cNum);
-                result = sNum / cNum;
-            }
+     * use the String operator from the class Operator_impl
+     * to avoid cross-reference issues
+     **/
+    private void calcResult(String operator) {
+        if (operator.isEmpty()) {
+            return;
         }
-        return result;
-    };
+        if (operator.equals("+")) {
+            calcStep = String.valueOf(sNum) + " + " + String.valueOf(cNum);
+            result = sNum + cNum;
+        } else if (operator.equals("-")) {
+            calcStep = String.valueOf(sNum) + " - " + String.valueOf(cNum);
+            result = sNum - cNum;
+        } else if (operator.equals("*")) {
+            calcStep = String.valueOf(sNum) + " * " + String.valueOf(cNum);
+            result = sNum * cNum;
+        } else if (operator.equals("/")) {
+            calcStep = String.valueOf(sNum) + " / " + String.valueOf(cNum);
+            result = sNum / cNum;
+        }
+    }
 }
