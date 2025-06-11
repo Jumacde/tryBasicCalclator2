@@ -6,7 +6,8 @@ public class Calc_impl implements Calc {
     private double cNum; // inputted current number
     private double sNum; // stored number
     private double result; // calculate result
-    private boolean isInputNum;
+    private boolean isInputNum; // true = allow enter number
+    private String calcStep;
 
     public Calc_impl() {
         clear();
@@ -33,6 +34,11 @@ public class Calc_impl implements Calc {
     }
 
     @Override
+    public String getCalcStep() {
+        return calcStep;
+    }
+
+    @Override
     public void setCNum(double cNum) {
         this.cNum = cNum;
     }
@@ -53,11 +59,17 @@ public class Calc_impl implements Calc {
     }
 
     @Override
+    public void setCalcStep(String calcStep) {
+        this.calcStep = calcStep;
+    }
+
+    @Override
     public void clear() {
         this.cNum = 0;
         this.sNum = 0;
         this.result = 0;
         this.isInputNum = true;
+        this.calcStep = "";
     }
 
     /**
@@ -79,12 +91,16 @@ public class Calc_impl implements Calc {
     private double calcResult(String operator) {
         if (!operator.isEmpty()) {
             if (operator.equals("+")) {
+                calcStep = String.valueOf(sNum) + " + " + String.valueOf(cNum);
                 result = sNum + cNum;
             } else if (operator.equals("-")) {
+                calcStep = String.valueOf(sNum) + " - " + String.valueOf(cNum);
                 result = sNum - cNum;
             } else if (operator.equals("*")) {
+                calcStep = String.valueOf(sNum) + " * " + String.valueOf(cNum);
                 result = sNum * cNum;
             } else if (operator.equals("/")) {
+                calcStep = String.valueOf(sNum) + " / " + String.valueOf(cNum);
                 result = sNum / cNum;
             }
         }

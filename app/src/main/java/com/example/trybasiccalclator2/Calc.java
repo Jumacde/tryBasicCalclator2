@@ -5,11 +5,13 @@ public interface Calc {
     double getSNum();
     double getResult();
     boolean getIsInputNum();
+    String getCalcStep();
 
     void setCNum(double cNum);
     void setSNum(double sNum);
     void setResult(double result);
     void setIsInputNum(boolean isInputNum);
+    void setCalcStep(String calcStep);
 
     void clear();
     // wrap method
