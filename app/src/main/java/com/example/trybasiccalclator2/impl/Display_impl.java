@@ -1,5 +1,7 @@
 package com.example.trybasiccalclator2.impl;
 
+import android.security.keystore.StrongBoxUnavailableException;
+
 import com.example.trybasiccalclator2.Calc;
 import com.example.trybasiccalclator2.Display;
 import com.example.trybasiccalclator2.Operator;
@@ -37,7 +39,14 @@ public class Display_impl implements Display {
         String calcStep = calc.getCalcStep();
 
         if (!sOpe.isEmpty()) {
-            if (display.equals(calcStep)) {}
+            if (display.equals(calcStep)) {
+                display += String.valueOf(digit);
+            } else if (display.endsWith("+")
+                    || display.endsWith("-")
+                    || display.endsWith("*")
+                    || display.endsWith("/")) {
+                display += digit;
+            }
 
         }
     }
