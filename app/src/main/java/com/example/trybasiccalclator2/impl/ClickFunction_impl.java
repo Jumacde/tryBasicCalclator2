@@ -34,6 +34,11 @@ public class ClickFunction_impl implements ClickFunction {
     }
 
     private void operatorClick(Calc calc, Operator operator, Display display) {
+        String op = operator.getSOpe();
+        if (op.equals("=")) {
+            String x;
+            x =
+        }
 
     }
 
