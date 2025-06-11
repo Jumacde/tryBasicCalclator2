@@ -5,6 +5,6 @@ public interface Display {
     void setDisplay();
     // wrap methods
     void callShowDigit(Calc calc, Operator operator, int digit);
-    void callShowOp(Calc calc, Operator operator);
+    void callShowCalcStep(Calc calc, Operator operator);
 
 }

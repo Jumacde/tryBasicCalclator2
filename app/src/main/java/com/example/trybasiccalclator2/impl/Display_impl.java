@@ -1,7 +1,5 @@
 package com.example.trybasiccalclator2.impl;
 
-import android.security.keystore.StrongBoxUnavailableException;
-
 import com.example.trybasiccalclator2.Calc;
 import com.example.trybasiccalclator2.Display;
 import com.example.trybasiccalclator2.Operator;
@@ -31,8 +29,8 @@ public class Display_impl implements Display {
 
     // wrap method
     @Override
-    public void callShowOp(Calc calc, Operator operator) {
-        ShowOp(calc, operator);
+    public void callShowCalcStep(Calc calc, Operator operator) {
+        ShowCalcStep(calc, operator);
     }
 
     private void showDigit(Calc calc, Operator operator, int digit) {
@@ -54,7 +52,7 @@ public class Display_impl implements Display {
         }
     }
 
-    private void ShowOp(Calc calc, Operator operator) {
+    private void ShowCalcStep(Calc calc, Operator operator) {
 
     }
 
