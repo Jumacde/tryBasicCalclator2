@@ -8,7 +8,11 @@ public class TextDisplay_impl implements TextDisplay {
     private String display;
     private CalculateLogic calculateLogic;
     private Operators operators;
+
     public TextDisplay_impl(CalculateLogic calculateLogic,Operators operators) {
+        calculateLogic = new CalculateLogicLogic_impl();
+        operators = new Operators_impl();
+
         displayClear(calculateLogic, operators);
     }
 
