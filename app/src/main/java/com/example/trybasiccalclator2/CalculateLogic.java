@@ -1,8 +1,8 @@
 package com.example.trybasiccalclator2;
 
 public interface CalculateLogic {
-    double getCurrentNumber();
+    String getCurrentNumber();
     double getStoredNumber();
-    void setCurrentNumber(double currentNumber);
+    void setCurrentNumber(String currentNumber);
     void setStoredNumber(double storedNumber);
 }

@@ -3,17 +3,17 @@ package com.example.trybasiccalclator2.impl;
 import com.example.trybasiccalclator2.CalculateLogic;
 
 public class CalculateLogicLogic_impl implements CalculateLogic {
-    private double currentNumber;
+    private String currentNumber;
     private double storedNumber;
 
     public CalculateLogicLogic_impl() {
-        this.currentNumber = 0;
+        this.currentNumber = "0";
         this.storedNumber = 0;
 
     }
 
     @Override
-    public double getCurrentNumber() {
+    public String getCurrentNumber() {
         return currentNumber;
     }
 
@@ -23,7 +23,7 @@ public class CalculateLogicLogic_impl implements CalculateLogic {
     }
 
     @Override
-    public void setCurrentNumber(double currentNumber) {
+    public void setCurrentNumber(String currentNumber) {
         this.currentNumber = currentNumber;
     }
 

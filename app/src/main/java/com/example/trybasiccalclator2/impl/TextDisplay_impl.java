@@ -29,11 +29,11 @@ public class TextDisplay_impl implements TextDisplay {
 
     @Override
     public void displayClear(CalculateLogic calculateLogic, Operators operators) {
-        double currentNumber = calculateLogic.getCurrentNumber();
+        String currentNumber = calculateLogic.getCurrentNumber();
         double storedNumber = calculateLogic.getStoredNumber();
         String operator = operators.getOperator();
 
-        currentNumber = 0;
+        currentNumber = "0";
         storedNumber = 0;
         operator = "";
 
