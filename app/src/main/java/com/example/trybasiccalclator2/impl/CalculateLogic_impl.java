@@ -49,5 +49,26 @@ public class CalculateLogic_impl implements CalculateLogic {
      * * @ Param: operators
      * * - call the interface
      */
-    private void calcStep(Operators operators) {}
+    private void calcStep(Operators operators) {
+        String operator = operators.getOperator();
+        if (operator.isEmpty()) {
+            return;
+        }
+        double result;
+        String step;
+        double cNum = Double.parseDouble(currentNumber);
+        if (operator.equals("+")) {
+            step = storedNumber + operator + cNum;
+            result = Double.parseDouble(step);
+        } else if (operator.equals("-")) {
+            step = storedNumber + operator + cNum;
+            result = Double.parseDouble(step);
+        } else if (operator.equals("*")) {
+            step = storedNumber + operator + cNum;
+            result = Double.parseDouble(step);
+        } else if (operator.equals("/")) {
+            step = storedNumber + operator + cNum;
+            result = Double.parseDouble(step);
+        }
+    }
 }
