@@ -56,19 +56,24 @@ public class CalculateLogic_impl implements CalculateLogic {
         }
         double result;
         String step;
-        double cNum = Double.parseDouble(currentNumber);
+        double cNum = 0;
+        try {
+            cNum = Double.parseDouble(currentNumber);
+        } catch (NumberFormatException nFe) {
+            System.err.println("Invalid number format for currentNumber: " + currentNumber);
+            result = Double.NaN; // the result shows none.
+            return;
+        }
+        step = storedNumber + operator + cNum; // to show the calculate step on the display.
+
         if (operator.equals("+")) {
-            step = storedNumber + operator + cNum;
-            result = Double.parseDouble(step);
+            result = storedNumber + cNum;
         } else if (operator.equals("-")) {
-            step = storedNumber + operator + cNum;
-            result = Double.parseDouble(step);
+            result = storedNumber - cNum;
         } else if (operator.equals("*")) {
-            step = storedNumber + operator + cNum;
-            result = Double.parseDouble(step);
+            result = storedNumber * cNum;
         } else if (operator.equals("/")) {
-            step = storedNumber + operator + cNum;
-            result = Double.parseDouble(step);
+            result = storedNumber / cNum;
         }
     }
 }
