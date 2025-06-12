@@ -27,6 +27,7 @@ public class TextDisplay_impl implements TextDisplay {
         this.display = display;
     }
 
+    // method: clear display
     @Override
     public void displayClear(CalculateLogic calculateLogic, Operators operators) {
         String currentNumber = calculateLogic.getCurrentNumber();
@@ -47,6 +48,15 @@ public class TextDisplay_impl implements TextDisplay {
      * */
     @Override
     public void callShowingDisplay(CalculateLogic calculateLogic, Operators operators) {
+        showingDisplay(calculateLogic, operators);
+    }
+
+    /**
+     * method: define the showing calculate-step and -result on the display
+     * @ param: calculateLogic, operators
+     * - call variables from other classes via calling the interface classes.
+     * */
+    private void showingDisplay(CalculateLogic calculateLogic, Operators operators) {
 
     }
 
