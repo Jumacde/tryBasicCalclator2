@@ -1,12 +1,13 @@
 package com.example.trybasiccalclator2.impl;
 
 import com.example.trybasiccalclator2.CalculateLogic;
+import com.example.trybasiccalclator2.Operators;
 
-public class CalculateLogicLogic_impl implements CalculateLogic {
+public class CalculateLogic_impl implements CalculateLogic {
     private String currentNumber;
     private double storedNumber;
 
-    public CalculateLogicLogic_impl() {
+    public CalculateLogic_impl() {
         this.currentNumber = "0";
         this.storedNumber = 0;
 
@@ -31,4 +32,22 @@ public class CalculateLogicLogic_impl implements CalculateLogic {
     public void setStoredNumber(double storedNumber) {
         this.storedNumber = storedNumber;
     }
+
+    /**
+     * wrap method
+     * @ Param: operators
+     * - call the interface
+     * */
+    @Override
+    public void callCalcStep(Operators operators) {
+        calcStep(operators);
+    }
+
+    /**
+     * method: calculate method
+     * - to calculate and to show the calculate step
+     * * @ Param: operators
+     * * - call the interface
+     */
+    private void calcStep(Operators operators) {}
 }

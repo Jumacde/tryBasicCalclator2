@@ -10,7 +10,7 @@ public class TextDisplay_impl implements TextDisplay {
     private Operators operators;
 
     public TextDisplay_impl(CalculateLogic calculateLogic,Operators operators) {
-        calculateLogic = new CalculateLogicLogic_impl();
+        calculateLogic = new CalculateLogic_impl();
         operators = new Operators_impl();
 
         displayClear(calculateLogic, operators);
