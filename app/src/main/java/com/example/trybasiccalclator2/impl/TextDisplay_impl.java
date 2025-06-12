@@ -5,7 +5,9 @@ import com.example.trybasiccalclator2.Operators;
 import com.example.trybasiccalclator2.TextDisplay;
 
 public class TextDisplay_impl implements TextDisplay {
-    String display;
+    private String display;
+    private CalculateLogic calculateLogic;
+    private Operators operators;
     public TextDisplay_impl(CalculateLogic calculateLogic,Operators operators) {
         displayClear(calculateLogic, operators);
     }
