@@ -39,4 +39,16 @@ public class TextDisplay_impl implements TextDisplay {
 
         this.display = "0";
     }
+
+    /**
+     * wrap method
+     * @ param: calculateLogic, operators
+     * - call variables from other classes via calling the interface classes.
+     * */
+    @Override
+    public void callShowingDisplay(CalculateLogic calculateLogic, Operators operators) {
+
+    }
+
+
 }
