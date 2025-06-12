@@ -1,11 +1,36 @@
 package com.example.trybasiccalclator2.impl;
 
+import com.example.trybasiccalclator2.CalculateLogic;
+import com.example.trybasiccalclator2.Operators;
 import com.example.trybasiccalclator2.TextDisplay;
 
 public class TextDisplay_impl implements TextDisplay {
-
+    String display;
     public TextDisplay_impl() {
 
     }
 
+
+    @Override
+    public String getDisplay() {
+        return "";
+    }
+
+    @Override
+    public void setDisplay(String display) {
+
+    }
+
+    @Override
+    public void displayClear(CalculateLogic calculateLogic, Operators operators) {
+        double currentNumber = calculateLogic.getCurrentNumber();
+        double storedNumber = calculateLogic.getStoredNumber();
+        String operator = operators.getOperator();
+
+        currentNumber = 0;
+        storedNumber = 0;
+        operator = "";
+
+        this.display = "0";
+    }
 }
