@@ -57,7 +57,11 @@ public class TextDisplay_impl implements TextDisplay {
      * - call variables from other classes via calling the interface classes.
      * */
     private void showingDisplay(CalculateLogic calculateLogic, Operators operators) {
-
+        String currentNumber = calculateLogic.getCurrentNumber();
+        double storedNumber = calculateLogic.getStoredNumber();
+        String operator = operators.getOperator();
+        double result;
+        String step;
     }
 
 
