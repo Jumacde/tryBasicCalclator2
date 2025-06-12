@@ -6,19 +6,19 @@ import com.example.trybasiccalclator2.TextDisplay;
 
 public class TextDisplay_impl implements TextDisplay {
     String display;
-    public TextDisplay_impl() {
-
+    public TextDisplay_impl(CalculateLogic calculateLogic,Operators operators) {
+        displayClear(calculateLogic, operators);
     }
 
 
     @Override
     public String getDisplay() {
-        return "";
+        return display;
     }
 
     @Override
     public void setDisplay(String display) {
-
+        this.display = display;
     }
 
     @Override
