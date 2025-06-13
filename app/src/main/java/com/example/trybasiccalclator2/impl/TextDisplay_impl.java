@@ -6,8 +6,8 @@ import com.example.trybasiccalclator2.TextDisplay;
 
 public class TextDisplay_impl implements TextDisplay {
     private String display;
-    private CalculateLogic calculateLogic;
-    private Operators operators;
+    private final CalculateLogic calculateLogic;
+    private final Operators operators;
 
     public TextDisplay_impl(CalculateLogic calculateLogic,Operators operators) {
         this.calculateLogic = calculateLogic;
@@ -15,7 +15,6 @@ public class TextDisplay_impl implements TextDisplay {
 
         displayClear();
     }
-
 
     @Override
     public String getDisplay() {
