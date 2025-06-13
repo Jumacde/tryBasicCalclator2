@@ -28,6 +28,7 @@ public class TextDisplay_impl implements TextDisplay {
     // method: clear display
     @Override
     public void displayClear() {
+        this.display = "0";
         this.calculateLogic.setCurrentNumber("0");
         this.calculateLogic.setCNum(0);
         this.calculateLogic.setStoredNumber(0);
