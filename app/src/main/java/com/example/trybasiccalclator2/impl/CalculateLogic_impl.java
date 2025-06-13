@@ -99,10 +99,12 @@ public class CalculateLogic_impl implements CalculateLogic {
             calcResult = storedNumber - cNum;
         } else if (operator.equals("*")) {
             calcResult = storedNumber * cNum;
-        } else if (operator.equals("/") && (cNum != 0 || storedNumber != 0)) {
-            calcResult = storedNumber / cNum;
-        } else {
-            calcResult = 0;
+        } else if (operator.equals("/")) { // if the denominator or numerator is 0 => 0
+            if(cNum == 0 || storedNumber == 0) {
+                calcResult = 0;
+            } else {
+                calcResult = storedNumber / cNum;
+            }
         }
     }
 }
