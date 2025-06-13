@@ -9,6 +9,7 @@ public class CalculateLogic_impl implements CalculateLogic {
     private String calcStep;
     private double calcResult;
     private double cNum;
+    private boolean isInputNum;
 
     public CalculateLogic_impl() {
         this.currentNumber = "0";
@@ -16,6 +17,7 @@ public class CalculateLogic_impl implements CalculateLogic {
         this.calcStep = "";
         this.calcResult = 0;
         this.cNum = 0;
+        this.isInputNum = true;
     }
 
     @Override
@@ -44,6 +46,11 @@ public class CalculateLogic_impl implements CalculateLogic {
     }
 
     @Override
+    public boolean getIsInputNum() {
+        return isInputNum;
+    }
+
+    @Override
     public void setCurrentNumber(String currentNumber) {
         this.currentNumber = currentNumber;
         this.cNum = Double.parseDouble(currentNumber);
@@ -67,6 +74,11 @@ public class CalculateLogic_impl implements CalculateLogic {
     @Override
     public void setCalcResult(double calcResult) {
         this.calcResult = calcResult;
+    }
+
+    @Override
+    public void setIsInputNum(boolean isInputNum) {
+        this.isInputNum = isInputNum;
     }
 
     /**

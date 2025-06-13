@@ -64,7 +64,7 @@ public class TextDisplay_impl implements TextDisplay {
         double result = calculateLogic.getCalcResult();
         String step = calculateLogic.getCalcStep();
 
-        if (!operator.equals("=")) { // if the user in the middle of a calculation
+        if (!operator.equals("=")) { // 1.showing the inputted number and the calculate step
             if () {}
 
         }
