@@ -22,8 +22,8 @@ public class ButtonFunction_impl implements ButtonFunction {
      * - call the interface
      * */
     @Override
-    public void callOnNumberClick(CalculateLogic calculateLogic) {
-        onNumberClick(calculateLogic);
+    public void callOnNumberClick(String digit) {
+        onNumberClick(digit);
     }
 
     /**
@@ -32,8 +32,8 @@ public class ButtonFunction_impl implements ButtonFunction {
      * - call the interface
      * */
     @Override
-    public void callOnOperatorCLick(Operators operators) {
-        onOperatorCLick(operators);
+    public void callOnOperatorCLick(String op) {
+        onOperatorCLick(op);
     }
 
     /**
@@ -42,8 +42,8 @@ public class ButtonFunction_impl implements ButtonFunction {
      * - call the interface
      * */
     @Override
-    public void callOnEqualClick(Operators operators) {
-        onEqualClick(operators);
+    public void callOnEqualClick() {
+        onEqualClick();
     }
 
     /**
@@ -52,23 +52,23 @@ public class ButtonFunction_impl implements ButtonFunction {
      * - call the interface
      * */
     @Override
-    public void callOnACClick(TextDisplay textDisplay) {
-        onACClick(textDisplay);
+    public void callOnACClick() {
+        onACClick();
     }
 
-    private void onNumberClick(CalculateLogic calculateLogic) {
-
-    }
-
-    private void onOperatorCLick(Operators operators) {
+    private void onNumberClick(String digit) {
 
     }
 
-    private void onEqualClick(Operators operators) {
+    private void onOperatorCLick(String op) {
 
     }
 
-    private void onACClick(TextDisplay textDisplay) {
+    private void onEqualClick() {
+
+    }
+
+    private void onACClick() {
 
     }
 
