@@ -18,7 +18,7 @@ public class ButtonFunction_impl implements ButtonFunction {
      * */
     @Override
     public void callOnNumberClick(CalculateLogic calculateLogic) {
-
+        onNumberClick(calculateLogic);
     }
 
     /**
@@ -28,7 +28,7 @@ public class ButtonFunction_impl implements ButtonFunction {
      * */
     @Override
     public void callOnOperatorCLick(Operators operators) {
-
+        onOperatorCLick(operators);
     }
 
     /**
@@ -38,7 +38,7 @@ public class ButtonFunction_impl implements ButtonFunction {
      * */
     @Override
     public void callOnEqualClick(Operators operators) {
-
+        onEqualClick(operators);
     }
 
     /**
@@ -48,6 +48,23 @@ public class ButtonFunction_impl implements ButtonFunction {
      * */
     @Override
     public void callOnACClick(TextDisplay textDisplay) {
+        onACClick(textDisplay);
+    }
+
+    private void onNumberClick(CalculateLogic calculateLogic) {
 
     }
+
+    private void onOperatorCLick(Operators operators) {
+
+    }
+
+    private void onEqualClick(Operators operators) {
+
+    }
+
+    private void onACClick(TextDisplay textDisplay) {
+
+    }
+
 }
