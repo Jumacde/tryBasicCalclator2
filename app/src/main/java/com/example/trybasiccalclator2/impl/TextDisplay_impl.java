@@ -10,8 +10,8 @@ public class TextDisplay_impl implements TextDisplay {
     private Operators operators;
 
     public TextDisplay_impl(CalculateLogic calculateLogic,Operators operators) {
-        calculateLogic = new CalculateLogic_impl();
-        operators = new Operators_impl();
+        this.calculateLogic = calculateLogic;
+        this.operators = operators;
 
         displayClear();
     }
@@ -30,17 +30,12 @@ public class TextDisplay_impl implements TextDisplay {
     // method: clear display
     @Override
     public void displayClear() {
-
-
-        String currentNumber = calculateLogic.getCurrentNumber();
-        double storedNumber = calculateLogic.getStoredNumber();
-        String operator = operators.getOperator();
-
-        currentNumber = "0";
-        storedNumber = 0;
-        operator = "";
-
-        this.display = "0";
+        this.calculateLogic.setCurrentNumber("0");
+        this.calculateLogic.setCNum(0);
+        this.calculateLogic.setStoredNumber(0);
+        this.calculateLogic.setCalcResult(0);
+        this.calculateLogic.setCalcStep("");
+        this.operators.setOperator("");
     }
 
     /**
