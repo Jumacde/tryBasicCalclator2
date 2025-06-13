@@ -9,6 +9,7 @@ public class ButtonFunction_impl implements ButtonFunction {
     private final CalculateLogic calculateLogic;
     private final Operators operators;
     private final TextDisplay textDisplay;
+
     public ButtonFunction_impl (CalculateLogic calculateLogic, Operators operators, TextDisplay textDisplay) {
         this.calculateLogic = calculateLogic;
         this.operators = operators;
