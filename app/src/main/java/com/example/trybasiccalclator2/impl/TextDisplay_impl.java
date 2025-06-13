@@ -43,8 +43,8 @@ public class TextDisplay_impl implements TextDisplay {
      * - call variables from other classes via calling the interface classes.
      * */
     @Override
-    public void callShowingDisplay(CalculateLogic calculateLogic, Operators operators) {
-        showingDisplay(calculateLogic, operators);
+    public void callShowingDisplay() {
+        showingDisplay();
     }
 
     /**
@@ -52,10 +52,10 @@ public class TextDisplay_impl implements TextDisplay {
      * @ param: calculateLogic, operators
      * - call variables from other classes via calling the interface classes.
      * */
-    private void showingDisplay(CalculateLogic calculateLogic, Operators operators) {
+    private void showingDisplay() {
         String currentNumber = calculateLogic.getCurrentNumber();
-        double cNum = calculateLogic.getCNum();
-        double storedNumber = calculateLogic.getStoredNumber();
+        //double cNum = calculateLogic.getCNum();
+        //double storedNumber = calculateLogic.getStoredNumber();
         String operator = operators.getOperator();
         double result = calculateLogic.getCalcResult(); // ex: calcResult = storedNumber + cNum;
         String step = calculateLogic.getCalcStep(); // calcStep = storedNumber + operator + cNum;
