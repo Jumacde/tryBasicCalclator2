@@ -60,17 +60,14 @@ public class TextDisplay_impl implements TextDisplay {
         String step = calculateLogic.getCalcStep(); // calcStep = storedNumber + operator + cNum;
         boolean isInputNum = calculateLogic.getIsInputNum(); // true
 
-        if (!operator.equals("=")) { // 1.showing the inputted number and the calculate step
-            if (isInputNum) {
-                if (operator.isEmpty()) {
-                    display = currentNumber;
-                } else if (operator.equals("+") || operator.equals("-") || operator.equals("*") || operator.equals("/")) {
-                    display = step;
-                }
-            }
-
-        } else { // if the user enter "=", shows the calculate result on the display.
-            display = String.valueOf(result);
+        if (!operator.equals("=")) { // if the user enter "=", shows the calculate result on the display.
+            display = String.valueOf(result); // showing the inputted number and the calculate step
+        } else if (operator.isEmpty()) {
+                display = currentNumber;
+        } else if (operator.equals("+") || operator.equals("-") || operator.equals("*") || operator.equals("/")) {
+            display = step;
+        } else {
+            this.display = currentNumber;
         }
     }
 
