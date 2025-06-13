@@ -6,9 +6,13 @@ import com.example.trybasiccalclator2.Operators;
 import com.example.trybasiccalclator2.TextDisplay;
 
 public class ButtonFunction_impl implements ButtonFunction {
-
-    public ButtonFunction_impl () {
-
+    private final CalculateLogic calculateLogic;
+    private final Operators operators;
+    private final TextDisplay textDisplay;
+    public ButtonFunction_impl (CalculateLogic calculateLogic, Operators operators, TextDisplay textDisplay) {
+        this.calculateLogic = calculateLogic;
+        this.operators = operators;
+        this.textDisplay = textDisplay;
     }
 
     /**
