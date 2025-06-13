@@ -63,12 +63,14 @@ public class TextDisplay_impl implements TextDisplay {
         if (!operator.equals("=")) { // 1.showing the inputted number and the calculate step
             if (isInputNum) {
                 if (operator.isEmpty()) {
-                    this.display =
-
+                    display = currentNumber;
+                } else if (operator.equals("+") || operator.equals("-") || operator.equals("*") || operator.equals("/")) {
+                    display = step;
                 }
-
             }
 
+        } else { // if the user enter "=", shows the calculate result on the display.
+            display = String.valueOf(result);
         }
     }
 
