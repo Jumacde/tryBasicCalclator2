@@ -56,8 +56,8 @@ public class TextDisplay_impl implements TextDisplay {
         double cNum = calculateLogic.getCNum();
         double storedNumber = calculateLogic.getStoredNumber();
         String operator = operators.getOperator();
-        double result = calculateLogic.getCalcResult();
-        String step = calculateLogic.getCalcStep();
+        double result = calculateLogic.getCalcResult(); // ex: calcResult = storedNumber + cNum;
+        String step = calculateLogic.getCalcStep(); // calcStep = storedNumber + operator + cNum;
         boolean isInputNum = calculateLogic.getIsInputNum(); // true
 
         if (!operator.equals("=")) { // 1.showing the inputted number and the calculate step
