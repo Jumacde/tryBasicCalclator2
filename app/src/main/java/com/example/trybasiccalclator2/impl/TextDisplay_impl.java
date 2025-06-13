@@ -12,8 +12,7 @@ public class TextDisplay_impl implements TextDisplay {
     public TextDisplay_impl(CalculateLogic calculateLogic,Operators operators) {
         this.calculateLogic = calculateLogic;
         this.operators = operators;
-
-        displayClear();
+        displayClear(); // initialize showing the displays using this method.
     }
 
     @Override
