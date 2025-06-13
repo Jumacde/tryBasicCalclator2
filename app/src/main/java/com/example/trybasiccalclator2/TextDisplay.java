@@ -4,6 +4,6 @@ public interface TextDisplay {
     String getDisplay();
     void setDisplay(String display);
 
-    void displayClear(CalculateLogic calculateLogic, Operators operators); // clear the display
+    void displayClear(); // clear the display
     void callShowingDisplay(CalculateLogic calculateLogic, Operators operators); // wrap method
 }

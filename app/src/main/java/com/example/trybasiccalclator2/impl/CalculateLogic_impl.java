@@ -4,7 +4,7 @@ import com.example.trybasiccalclator2.CalculateLogic;
 import com.example.trybasiccalclator2.Operators;
 
 public class CalculateLogic_impl implements CalculateLogic {
-    private String currentNumber;
+    private String currentNumber; // the inputted number could
     private double storedNumber;
     private String calcStep;
     private double calcResult;

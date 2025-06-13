@@ -13,7 +13,7 @@ public class TextDisplay_impl implements TextDisplay {
         calculateLogic = new CalculateLogic_impl();
         operators = new Operators_impl();
 
-        displayClear(calculateLogic, operators);
+        displayClear();
     }
 
 
@@ -29,7 +29,9 @@ public class TextDisplay_impl implements TextDisplay {
 
     // method: clear display
     @Override
-    public void displayClear(CalculateLogic calculateLogic, Operators operators) {
+    public void displayClear() {
+
+
         String currentNumber = calculateLogic.getCurrentNumber();
         double storedNumber = calculateLogic.getStoredNumber();
         String operator = operators.getOperator();
@@ -63,9 +65,15 @@ public class TextDisplay_impl implements TextDisplay {
         String operator = operators.getOperator();
         double result = calculateLogic.getCalcResult();
         String step = calculateLogic.getCalcStep();
+        boolean isInputNum = calculateLogic.getIsInputNum(); // true
 
         if (!operator.equals("=")) { // 1.showing the inputted number and the calculate step
-            if () {}
+            if (isInputNum) {
+                if (operator.isEmpty()) {
+
+                }
+
+            }
 
         }
     }
