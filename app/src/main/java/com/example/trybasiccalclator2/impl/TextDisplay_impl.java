@@ -60,8 +60,8 @@ public class TextDisplay_impl implements TextDisplay {
         String currentNumber = calculateLogic.getCurrentNumber();
         double storedNumber = calculateLogic.getStoredNumber();
         String operator = operators.getOperator();
-        double result;
-        String step;
+        double result = calculateLogic.getCalcResult();
+        String step = calculateLogic.getCalcStep();
     }
 
 
