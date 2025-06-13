@@ -54,6 +54,7 @@ public class CalculateLogic_impl implements CalculateLogic {
     public void setCurrentNumber(String currentNumber) {
         this.currentNumber = currentNumber;
         this.cNum = Double.parseDouble(currentNumber);
+        this.isInputNum = true;
     }
 
     @Override
@@ -118,5 +119,6 @@ public class CalculateLogic_impl implements CalculateLogic {
                 calcResult = storedNumber / cNum;
             }
         }
+        this.isInputNum = false;
     }
 }
