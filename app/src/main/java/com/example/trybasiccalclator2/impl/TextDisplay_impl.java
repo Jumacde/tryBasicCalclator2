@@ -58,10 +58,16 @@ public class TextDisplay_impl implements TextDisplay {
      * */
     private void showingDisplay(CalculateLogic calculateLogic, Operators operators) {
         String currentNumber = calculateLogic.getCurrentNumber();
+        double cNum = calculateLogic.getCNum();
         double storedNumber = calculateLogic.getStoredNumber();
         String operator = operators.getOperator();
         double result = calculateLogic.getCalcResult();
         String step = calculateLogic.getCalcStep();
+
+        if (!operator.equals("=")) { // if the user in the middle of a calculation
+            if () {}
+
+        }
     }
 
 
