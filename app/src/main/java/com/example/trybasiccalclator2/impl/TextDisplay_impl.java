@@ -63,6 +63,8 @@ public class TextDisplay_impl implements TextDisplay {
 
         if (operator.equals("=")) { // if the user enter "=", shows the calculate result on the display.
             display = String.valueOf(result); // showing the inputted number and the calculate step
+        } else if (isInputNum) { // if the user inputted only a number.
+            this.display = currentNumber;
         } else if (!operator.isEmpty()) {
             display = step;
         } else {
