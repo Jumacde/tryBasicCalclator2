@@ -63,6 +63,7 @@ public class TextDisplay_impl implements TextDisplay {
         if (!operator.equals("=")) { // 1.showing the inputted number and the calculate step
             if (isInputNum) {
                 if (operator.isEmpty()) {
+                    this.display =
 
                 }
 
