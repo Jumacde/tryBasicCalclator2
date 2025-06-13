@@ -57,6 +57,7 @@ public class ButtonFunction_impl implements ButtonFunction {
     }
 
     private void onNumberClick(String digit) {
+        String currentNumber =
 
     }
 
