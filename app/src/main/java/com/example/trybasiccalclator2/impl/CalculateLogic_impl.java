@@ -16,7 +16,6 @@ public class CalculateLogic_impl implements CalculateLogic {
         this.calcStep = "";
         this.calcResult = 0;
         this.cNum = 0;
-
     }
 
     @Override
@@ -47,13 +46,7 @@ public class CalculateLogic_impl implements CalculateLogic {
     @Override
     public void setCurrentNumber(String currentNumber) {
         this.currentNumber = currentNumber;
-
-        try {
-            cNum = Double.parseDouble(currentNumber);
-        } catch (NumberFormatException nFe) {
-            this.cNum = Double.NaN; // the result shows none.
-            System.err.println("Invalid number format for currentNumber: " + currentNumber);
-        }
+        this.cNum = Double.parseDouble(currentNumber);
     }
 
     @Override
@@ -97,12 +90,8 @@ public class CalculateLogic_impl implements CalculateLogic {
         if (operator.isEmpty()) {
             return;
         }
-        if (Double.isNaN(cNum)) {
-            calcResult = Double.NaN;
-            return;
-        }
-
-        calcStep = storedNumber + operator + cNum; // to show the calculate step on the display.
+        // to show the calculate step on the display.
+        calcStep = storedNumber + operator + cNum;
 
         if (operator.equals("+")) {
             calcResult = storedNumber + cNum;
@@ -110,8 +99,10 @@ public class CalculateLogic_impl implements CalculateLogic {
             calcResult = storedNumber - cNum;
         } else if (operator.equals("*")) {
             calcResult = storedNumber * cNum;
-        } else if (operator.equals("/")) {
+        } else if (operator.equals("/") && (cNum != 0 || storedNumber != 0)) {
             calcResult = storedNumber / cNum;
+        } else {
+            calcResult = 0;
         }
     }
 }
