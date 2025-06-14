@@ -15,5 +15,5 @@ public interface CalculateLogic {
     void setCalcResult(double calcResult);
     void setIsInputNum(boolean isInputNum);
 
-    void callCalcStep(Operators operators); // wrap method
+    void callCalculate(Operators operators); // wrap method
 }

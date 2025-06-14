@@ -88,8 +88,8 @@ public class CalculateLogic_impl implements CalculateLogic {
      * - call the interface
      * */
     @Override
-    public void callCalcStep(Operators operators) {
-        calcStep(operators);
+    public void callCalculate(Operators operators) {
+        calculate(operators);
     }
 
     /**
@@ -98,7 +98,7 @@ public class CalculateLogic_impl implements CalculateLogic {
      * * @ Param: operators
      * * - call the interface
      */
-    private void calcStep(Operators operators) {
+    private void calculate(Operators operators) {
         String operator = operators.getOperator();
         if (operator.isEmpty()) {
             return;

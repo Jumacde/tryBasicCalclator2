@@ -59,8 +59,9 @@ public class ButtonFunction_impl implements ButtonFunction {
     private void onNumberClick(String digit) {
         String currentNumber = calculateLogic.getCurrentNumber();
         boolean isInputNum = calculateLogic.getIsInputNum();
-        // if the user can´t input any number or if the display shows the initialized number by "0">
+        // if the user can´t input any number or if the display shows the initialized number by "0".
         if(!isInputNum || currentNumber.equals("0")) {
+            // if the user input a new number, that one will be override.
             calculateLogic.setCurrentNumber(digit);
         } else {
             calculateLogic.setCurrentNumber(currentNumber + digit);
@@ -71,10 +72,21 @@ public class ButtonFunction_impl implements ButtonFunction {
     }
 
     private void onOperatorCLick(String op) {
+        String operator = operators.getOperator();
+        double result = calculateLogic.getCalcResult();
+        calculateLogic.callCalculate(operators);
+        calculateLogic.setStoredNumber(result);
+
+        if (operator.isEmpty()) {
+            operators.setOperator("");
+        } else {
+            textDisplay.callShowingDisplay();
+        }
 
     }
 
     private void onEqualClick() {
+        calculateLogic.callCalculate(operators);
 
     }
 
