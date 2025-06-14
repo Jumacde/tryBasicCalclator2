@@ -75,14 +75,11 @@ public class ButtonFunction_impl implements ButtonFunction {
         String operator = operators.getOperator();
         double result = calculateLogic.getCalcResult();
         calculateLogic.callCalculate(operators);
-        calculateLogic.setStoredNumber(result);
-
-        if (operator.isEmpty()) {
-            operators.setOperator("");
-        } else {
-            textDisplay.callShowingDisplay();
-        }
-
+        calculateLogic.setStoredNumber(result); // the calculate result is stored in the value "storedNumber"
+        operators.setOperator(op); // save the new operator.
+        calculateLogic.setCurrentNumber("0");
+        calculateLogic.setIsInputNum(false);
+        textDisplay.callShowingDisplay(); // update the display.
     }
 
     private void onEqualClick() {
@@ -91,12 +88,12 @@ public class ButtonFunction_impl implements ButtonFunction {
         calculateLogic.setStoredNumber(result); // set the calculate result as the starting value for the next calculate
         operators.setOperator("=");
         calculateLogic.setIsInputNum(false); // set a next inputted number is a new input.
-        textDisplay.callShowingDisplay();
+        textDisplay.callShowingDisplay(); // update the display.
     }
 
     // method: Ac button click => clear the display.
     private void onACClick() {
-        textDisplay.displayClear();
+        textDisplay.displayClear(); // clear the display.
     }
 
 }
