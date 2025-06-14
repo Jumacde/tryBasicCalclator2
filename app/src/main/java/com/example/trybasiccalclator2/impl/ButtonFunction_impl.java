@@ -94,8 +94,9 @@ public class ButtonFunction_impl implements ButtonFunction {
         textDisplay.callShowingDisplay();
     }
 
+    // method: Ac button click => clear the display.
     private void onACClick() {
-
+        textDisplay.displayClear();
     }
 
 }
