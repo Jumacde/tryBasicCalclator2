@@ -59,7 +59,14 @@ public class ButtonFunction_impl implements ButtonFunction {
     private void onNumberClick(String digit) {
         String currentNumber = calculateLogic.getCurrentNumber();
         boolean isInputNum = calculateLogic.getIsInputNum();
-
+        // if the user can´t input any number or if the display shows the initialized number by "0">
+        if(!isInputNum || currentNumber.equals("0")) {
+            calculateLogic.setCurrentNumber(digit);
+        } else {
+            calculateLogic.setCurrentNumber(currentNumber + digit);
+        }
+        calculateLogic.setIsInputNum(true);
+        textDisplay.callShowingDisplay();
 
     }
 
