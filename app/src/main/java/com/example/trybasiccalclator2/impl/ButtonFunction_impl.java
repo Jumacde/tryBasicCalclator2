@@ -86,8 +86,12 @@ public class ButtonFunction_impl implements ButtonFunction {
     }
 
     private void onEqualClick() {
-        calculateLogic.callCalculate(operators);
-
+        double result = calculateLogic.getCalcResult(); // set to get the calculate result.
+        calculateLogic.callCalculate(operators); // execute the calculate method.
+        calculateLogic.setStoredNumber(result); // set the calculate result as the starting value for the next calculate
+        operators.setOperator("=");
+        calculateLogic.setIsInputNum(false); // set a next inputted number is a new input.
+        textDisplay.callShowingDisplay();
     }
 
     private void onACClick() {
