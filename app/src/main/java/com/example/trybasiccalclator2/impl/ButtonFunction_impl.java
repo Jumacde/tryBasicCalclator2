@@ -57,11 +57,11 @@ public class ButtonFunction_impl implements ButtonFunction {
     }
 
     private void onNumberClick(String digit) {
-        String currentNumber = calculateLogic.getCurrentNumber();
-        boolean isInputNum = calculateLogic.getIsInputNum();
-        // if the user can´t input any number or if the display shows the initialized number by "0".
+        String currentNumber = calculateLogic.getCurrentNumber(); // every first input is "0". ex: input "1" -> "0"
+        boolean isInputNum = calculateLogic.getIsInputNum(); // check whether the user input a number.
+        // if the user don´t input a number or if the display shows the initialized number by "0".
         if(!isInputNum || currentNumber.equals("0")) {
-            // if the user input a new number, that one will be override.
+            // the currentNumber will be override. // ex 0 -> 5
             calculateLogic.setCurrentNumber(digit);
         } else {
             calculateLogic.setCurrentNumber(currentNumber + digit);
