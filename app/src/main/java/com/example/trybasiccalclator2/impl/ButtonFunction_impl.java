@@ -81,10 +81,15 @@ public class ButtonFunction_impl implements ButtonFunction {
      * method: set input arithmetic operators
      * @ Param: String op
      * - this value works to set
-     *  < about this method >
-     *  using
+     * - premise this methods: the user has been inputted a number and input a arithmetic operator.
+     * < about this method >
+     *     1. calculate the stored number(first the storedNumber is "0", so the currentNumber is used.)
      ***/
     private void onOperatorCLick(String op) {
+        /*
+        * 1. calculate the number (and inputted operator).
+        *
+        * */
         String operator = operators.getOperator();
         double result = calculateLogic.getCalcResult();
         calculateLogic.callCalculate(operators);
