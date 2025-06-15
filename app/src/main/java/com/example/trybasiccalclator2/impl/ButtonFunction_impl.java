@@ -56,6 +56,14 @@ public class ButtonFunction_impl implements ButtonFunction {
         onACClick();
     }
 
+    /**
+     * method: set input number
+     * @ Param: String digit
+     * - this value works to set a additional digit
+     *  < about this method >
+     *      String currentNumber:
+     *  using
+     ***/
     private void onNumberClick(String digit) {
         String currentNumber = calculateLogic.getCurrentNumber(); // every first input is "0". ex: input "1" -> "0"
         boolean isInputNum = calculateLogic.getIsInputNum(); // check whether the user input a number.
@@ -69,6 +77,13 @@ public class ButtonFunction_impl implements ButtonFunction {
         textDisplay.callShowingDisplay(); // update the display
     }
 
+    /**
+     * method: set input arithmetic operators
+     * @ Param: String op
+     * - this value works to set
+     *  < about this method >
+     *  using
+     ***/
     private void onOperatorCLick(String op) {
         String operator = operators.getOperator();
         double result = calculateLogic.getCalcResult();
@@ -80,6 +95,11 @@ public class ButtonFunction_impl implements ButtonFunction {
         textDisplay.callShowingDisplay(); // update the display.
     }
 
+    /**
+     * method: set input operator "="
+     *  < about this method >
+     *  using
+     ***/
     private void onEqualClick() {
         double result = calculateLogic.getCalcResult(); // set to get the calculate result.
         calculateLogic.callCalculate(operators); // execute the calculate method.
