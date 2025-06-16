@@ -112,7 +112,7 @@ public class ButtonFunction_impl implements ButtonFunction {
     /**
      * method: set input operator "="
      *  < about this method >
-     *  using
+     *  if the user enter "=", show the calculate result.
      ***/
     private void onEqualClick() {
         double result = calculateLogic.getCalcResult(); // set to get the calculate result.
