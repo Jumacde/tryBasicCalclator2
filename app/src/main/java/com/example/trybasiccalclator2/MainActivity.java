@@ -1,6 +1,7 @@
 package com.example.trybasiccalclator2;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -31,9 +32,77 @@ public class MainActivity extends AppCompatActivity {
         textDisplay = new TextDisplay_impl(calculateLogic, operators);
         buttonFunction = new ButtonFunction_impl(calculateLogic, operators, textDisplay);
 
+        textView = findViewById(R.id.text);
+
+        setUpNumberButton(R.id.b00, "00");
+        setUpNumberButton(R.id.b0, "0");
+        setUpNumberButton(R.id.b1, "1");
+        setUpNumberButton(R.id.b2, "2");
+        setUpNumberButton(R.id.b3, "3");
+        setUpNumberButton(R.id.b4, "4");
+        setUpNumberButton(R.id.b5, "5");
+        setUpNumberButton(R.id.b6, "6");
+        setUpNumberButton(R.id.b7, "7");
+        setUpNumberButton(R.id.b8, "8");
+        setUpNumberButton(R.id.b9, "9");
+
+        setUpOperatorButton(R.id.plass, "+");
+        setUpOperatorButton(R.id.min, "-");
+        setUpOperatorButton(R.id.mul, "*");
+        setUpOperatorButton(R.id.div, "/");
+
+        setUpEqualButton(R.id.equal);
 
     }
 
+    // method: update display
+    private void updateDisplay() {
+        textView.setText(textDisplay.getDisplay());
+    }
+
+
+    private void setUpNumberButton(int bId, final String digit) {
+        Button button = findViewById(bId);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buttonFunction.callOnNumberClick(digit); // send the inputted integer
+                updateDisplay(); // update display
+            }
+        });
+    }
+
+    private void setUpOperatorButton(int bId, final String op) {
+        Button button = findViewById(bId);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buttonFunction.callOnOperatorCLick(op); // send the inputted operator
+                updateDisplay(); // update display
+            }
+        });
+    }
+
+    private void setUpEqualButton(int bId) {
+        Button button = findViewById(bId);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                buttonFunction.callOnEqualClick();
+                updateDisplay(); // update display
+            }
+        });
+    }
+
+    private void setUpACButton(int bId) {
+        Button button = findViewById(bId);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                button
+            }
+        });
+    }
 
 
 }
