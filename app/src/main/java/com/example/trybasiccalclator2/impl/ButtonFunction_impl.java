@@ -91,20 +91,21 @@ public class ButtonFunction_impl implements ButtonFunction {
      *          calculateLogic.setStoredNumber(result);
      *     3. next inputted arithmetic operator is stored in the setter.
      *          operators.setOperator(op);
-     *     4.
+     *     4. in oder to start to input next number, reset "currentNumber"
+     *          calculateLogic.setCurrentNumber("0");
+     *     5. set the state "not entering a number"
+     *          calculateLogic.setIsInputNum(false);
+     *     6. update the display.
+     *          textDisplay.callShowingDisplay();
      ***/
     private void onOperatorCLick(String op) {
-        /*
-        * 1. calculate the number (and inputted operator).
-        *
-        * */
         String operator = operators.getOperator();
         double result = calculateLogic.getCalcResult();
-        calculateLogic.callCalculate(operators);
+        calculateLogic.callCalculate(operators); // calculate the stored number.
         calculateLogic.setStoredNumber(result); // the calculate result is stored in the value "storedNumber"
         operators.setOperator(op); // save the new operator.
-        calculateLogic.setCurrentNumber("0");
-        calculateLogic.setIsInputNum(false);
+        calculateLogic.setCurrentNumber("0"); // reset the "currentNumber"
+        calculateLogic.setIsInputNum(false); // set the state "not entering a number"
         textDisplay.callShowingDisplay(); // update the display.
     }
 
