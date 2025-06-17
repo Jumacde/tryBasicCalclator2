@@ -83,20 +83,6 @@ public class ButtonClick_impl implements ButtonClick {
      * - this value works to set a inputted arithmetic operator.
      * - premise this methods: the user has been inputted a number and input a arithmetic operator.
      * < about this method >
-     *     1. calculate the stored number(first the storedNumber is "0", so the currentNumber is used.)
-     *          calculateLogic.callCalculate(operators);
-     *              ex: storedNumber(0) + cNum(5)
-     *              => calcStep = 0 + 5, calcResult = 5
-     *     2. the calculate result is stored in StoredNumber.
-     *          calculateLogic.setStoredNumber(result);
-     *     3. next inputted arithmetic operator is stored in the setter.
-     *          operators.setOperator(op);
-     *     4. in oder to start to input next number, reset "currentNumber"
-     *          calculateLogic.setCurrentNumber("0");
-     *     5. set the state "not entering a number"
-     *          calculateLogic.setIsInputNum(false);
-     *     6. update the display.
-     *          textDisplay.callShowingDisplay();
      ***/
     private void onOperatorCLick(String op) {
         String operator = operators.getOperator();
@@ -108,11 +94,15 @@ public class ButtonClick_impl implements ButtonClick {
         double storedNumber = calculateLogic.getStoredNumber();
         String sNum = String.valueOf(storedNumber);
 
-        if (!operator.isEmpty() && (currentNumber.isEmpty() || sNum.isEmpty())) { // if the user input nothing
-
-
+        if (!operator.isEmpty() && isInputNum) { // before the user input a arithmetic operation.
+            calculateLogic.callCalculate(operators);
+            calculateLogic.setStoredNumber(result);
+        } else {
+            calculateLogic.setStoredNumber(cNum);
         }
-
+        operators.setOperator(op);
+        calculateLogic.setCurrentNumber("0");
+        calculateLogic.setIsInputNum(false);
         textDisplay.callShowingDisplay(); // update the display.
     }
 
