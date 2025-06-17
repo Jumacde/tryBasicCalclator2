@@ -13,6 +13,7 @@ import com.example.trybasiccalclator2.impl.CalculateLogic_impl;
 import com.example.trybasiccalclator2.impl.Operators_impl;
 import com.example.trybasiccalclator2.impl.TextDisplay_impl;
 
+// execute apps calling by methods from other classes
 public class MainActivity extends AppCompatActivity {
     private TextView textView;
     private CalculateLogic calculateLogic;
@@ -26,10 +27,13 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
 
+        // instance
         calculateLogic = new CalculateLogic_impl();
         operators = new Operators_impl();
         textDisplay = new TextDisplay_impl(calculateLogic, operators);
         buttonFunction = new ButtonFunction_impl(calculateLogic, operators, textDisplay);
+
+        // set up showing text calling by the id.
         textView = findViewById(R.id.text);
 
         // set up numbers buttons
