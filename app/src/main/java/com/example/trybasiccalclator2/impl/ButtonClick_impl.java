@@ -1,16 +1,16 @@
 package com.example.trybasiccalclator2.impl;
 
-import com.example.trybasiccalclator2.ButtonFunction;
+import com.example.trybasiccalclator2.ButtonClick;
 import com.example.trybasiccalclator2.CalculateLogic;
 import com.example.trybasiccalclator2.Operators;
 import com.example.trybasiccalclator2.TextDisplay;
 
-public class ButtonFunction_impl implements ButtonFunction {
+public class ButtonClick_impl implements ButtonClick {
     private final CalculateLogic calculateLogic;
     private final Operators operators;
     private final TextDisplay textDisplay;
 
-    public ButtonFunction_impl (CalculateLogic calculateLogic, Operators operators, TextDisplay textDisplay) {
+    public ButtonClick_impl(CalculateLogic calculateLogic, Operators operators, TextDisplay textDisplay) {
         this.calculateLogic = calculateLogic;
         this.operators = operators;
         this.textDisplay = textDisplay;
@@ -101,11 +101,18 @@ public class ButtonFunction_impl implements ButtonFunction {
     private void onOperatorCLick(String op) {
         String operator = operators.getOperator();
         double result = calculateLogic.getCalcResult();
-        calculateLogic.callCalculate(operators); // calculate the stored number.
-        calculateLogic.setStoredNumber(result); // the calculate result is stored in the value "storedNumber"
-        operators.setOperator(op); // save the new operator.
-        calculateLogic.setCurrentNumber("0"); // reset the "currentNumber"
-        calculateLogic.setIsInputNum(false); // set the state "not entering a number"
+        boolean isInputNum = calculateLogic.getIsInputNum();
+
+        String currentNumber = calculateLogic.getCurrentNumber();
+        double cNum = Double.parseDouble(currentNumber);
+        double storedNumber = calculateLogic.getStoredNumber();
+        String sNum = String.valueOf(storedNumber);
+
+        if (!operator.isEmpty() && (currentNumber.isEmpty() || sNum.isEmpty())) { // if the user input nothing
+
+
+        }
+
         textDisplay.callShowingDisplay(); // update the display.
     }
 

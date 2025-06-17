@@ -8,7 +8,7 @@ import android.widget.TextView;
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.trybasiccalclator2.impl.ButtonFunction_impl;
+import com.example.trybasiccalclator2.impl.ButtonClick_impl;
 import com.example.trybasiccalclator2.impl.CalculateLogic_impl;
 import com.example.trybasiccalclator2.impl.Operators_impl;
 import com.example.trybasiccalclator2.impl.TextDisplay_impl;
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private CalculateLogic calculateLogic;
     private Operators operators;
     private TextDisplay textDisplay;
-    private ButtonFunction buttonFunction;
+    private ButtonClick buttonClick;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         calculateLogic = new CalculateLogic_impl();
         operators = new Operators_impl();
         textDisplay = new TextDisplay_impl(calculateLogic, operators);
-        buttonFunction = new ButtonFunction_impl(calculateLogic, operators, textDisplay);
+        buttonClick = new ButtonClick_impl(calculateLogic, operators, textDisplay);
 
         // set up showing text calling by the id.
         textView = findViewById(R.id.text);
@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonFunction.callOnNumberClick(digit); // send the inputted integer
+                buttonClick.callOnNumberClick(digit); // send the inputted integer
                 updateDisplay(); // update display
             }
         });
@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonFunction.callOnOperatorCLick(op); // send the inputted operator
+                buttonClick.callOnOperatorCLick(op); // send the inputted operator
                 updateDisplay(); // update display
             }
         });
@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonFunction.callOnEqualClick();
+                buttonClick.callOnEqualClick();
                 updateDisplay(); // update display
             }
         });
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                buttonFunction.callOnACClick();
+                buttonClick.callOnACClick();
                 updateDisplay(); // update display
             }
         });
