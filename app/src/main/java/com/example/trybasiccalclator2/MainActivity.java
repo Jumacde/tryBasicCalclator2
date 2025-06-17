@@ -15,7 +15,7 @@ import com.example.trybasiccalclator2.impl.TextDisplay_impl;
 
 public class MainActivity extends AppCompatActivity {
     private TextView textView;
-    private Button pl, mi, mu, di, eq;
+    //private Button pl, mi, mu, di, eq;
     private CalculateLogic calculateLogic;
     private Operators operators;
     private TextDisplay textDisplay;
@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         textView = findViewById(R.id.text);
 
+        // set up numbers buttons
         setUpNumberButton(R.id.b00, "00");
         setUpNumberButton(R.id.b0, "0");
         setUpNumberButton(R.id.b1, "1");
@@ -46,12 +47,17 @@ public class MainActivity extends AppCompatActivity {
         setUpNumberButton(R.id.b8, "8");
         setUpNumberButton(R.id.b9, "9");
 
+        // set up arithmetic operators buttons
         setUpOperatorButton(R.id.plass, "+");
         setUpOperatorButton(R.id.min, "-");
         setUpOperatorButton(R.id.mul, "*");
         setUpOperatorButton(R.id.div, "/");
 
+        // set up equal button
         setUpEqualButton(R.id.equal);
+
+        // set up AC(clear) button
+        setUpACButton(R.id.ac);
 
     }
 
@@ -99,7 +105,8 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                button
+                buttonFunction.callOnACClick();
+                updateDisplay(); // update display
             }
         });
     }
