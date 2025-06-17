@@ -65,15 +65,15 @@ public class ButtonClick_impl implements ButtonClick {
      *  using
      ***/
     private void onNumberClick(String digit) {
-        String currentNumber = calculateLogic.getCurrentNumber(); // every first input is "0". ex: input "1" -> "0"
-        boolean isInputNum = calculateLogic.getIsInputNum(); // check whether the user input a number.
-        // if the user don´t input a number or if the display shows the initialized number by "0".
-        if(!isInputNum || currentNumber.equals("0")) {
-            calculateLogic.setCurrentNumber(digit); // the currentNumber will be override. ex: 0 -> 5
+        String currentNumber = calculateLogic.getCurrentNumber();
+        double storedNumber = calculateLogic.getStoredNumber();
+        boolean isInputNum = calculateLogic.getIsInputNum();
+
+        if (!isInputNum || currentNumber.equals("0")) {
+            calculateLogic.setCurrentNumber(digit);
         } else {
-            calculateLogic.setCurrentNumber(currentNumber + digit); // if the user input another number further. ex: 51
+            calculateLogic.setCurrentNumber(currentNumber + digit);
         }
-        calculateLogic.setIsInputNum(true); // allow the state "entering a number". ex: 9 after pressing 5.
         textDisplay.callShowingDisplay(); // update the display
     }
 
@@ -94,7 +94,7 @@ public class ButtonClick_impl implements ButtonClick {
         double storedNumber = calculateLogic.getStoredNumber();
         String sNum = String.valueOf(storedNumber);
 
-        if (!operator.isEmpty() && isInputNum) { // before the user input a arithmetic operation.
+        if (!operator.isEmpty() && isInputNum) {
             calculateLogic.callCalculate(operators);
             calculateLogic.setStoredNumber(result);
         } else {
@@ -112,11 +112,12 @@ public class ButtonClick_impl implements ButtonClick {
      *  if the user enter "=", show the calculate result.
      ***/
     private void onEqualClick() {
-        double result = calculateLogic.getCalcResult(); // set to get the calculate result.
-        calculateLogic.callCalculate(operators); // execute the calculate method.
-        calculateLogic.setStoredNumber(result); // set the calculate result as the starting value for the next calculate
+        calculateLogic.callCalculate(operators);
+        double result = calculateLogic.getCalcResult();
+        calculateLogic.setStoredNumber(result);
         operators.setOperator("=");
-        calculateLogic.setIsInputNum(false); // set a next inputted number is a new input.
+        calculateLogic.setIsInputNum(false);
+
         textDisplay.callShowingDisplay(); // update the display.
     }
 
