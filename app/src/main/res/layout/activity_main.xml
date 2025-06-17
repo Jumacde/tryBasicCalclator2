@@ -261,8 +261,8 @@
             android:backgroundTint="@color/YankeesBlue"
             />
         <Button
-            android:id="@+id/plass"
-            android:onClick="pressPlass"
+            android:id="@+id/plus"
+            android:onClick="pressPluss"
             android:text="+"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"

@@ -15,7 +15,6 @@ import com.example.trybasiccalclator2.impl.TextDisplay_impl;
 
 public class MainActivity extends AppCompatActivity {
     private TextView textView;
-    //private Button pl, mi, mu, di, eq;
     private CalculateLogic calculateLogic;
     private Operators operators;
     private TextDisplay textDisplay;
@@ -31,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         operators = new Operators_impl();
         textDisplay = new TextDisplay_impl(calculateLogic, operators);
         buttonFunction = new ButtonFunction_impl(calculateLogic, operators, textDisplay);
-
         textView = findViewById(R.id.text);
 
         // set up numbers buttons
@@ -48,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         setUpNumberButton(R.id.b9, "9");
 
         // set up arithmetic operators buttons
-        setUpOperatorButton(R.id.plass, "+");
+        setUpOperatorButton(R.id.plus, "+");
         setUpOperatorButton(R.id.min, "-");
         setUpOperatorButton(R.id.mul, "*");
         setUpOperatorButton(R.id.div, "/");
@@ -58,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
 
         // set up AC(clear) button
         setUpACButton(R.id.ac);
-
     }
 
     // method: update display
@@ -66,7 +63,14 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(textDisplay.getDisplay());
     }
 
-
+    /**
+     * method: set up Numbers buttons
+     * @ Param: int bId
+     *     - every numbers buttons id on the apps xml. ex: bId = b00 => button "00".
+     * @ Param: final String digit
+     *     - to choose a button from numbers buttons
+     *     - the showing buttons by String. ex: digit = "00" => button "00".
+     * **/
     private void setUpNumberButton(int bId, final String digit) {
         Button button = findViewById(bId);
         button.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +82,14 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * method: set up Numbers buttons
+     * @ Param: int bId
+     *     - every operators buttons id on the apps xml. ex: bId = plus => button "+".
+     * @ Param: final String op
+     *     - to choose a button from operators buttons
+     *     - the showing buttons by String. ex: op = "+" => button "+".
+     * **/
     private void setUpOperatorButton(int bId, final String op) {
         Button button = findViewById(bId);
         button.setOnClickListener(new View.OnClickListener() {
@@ -89,6 +101,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * method: set up Numbers buttons
+     * @ Param: int bId
+     *     - the equals buttons id on the apps xml. ex: bId = equal => button "=".
+     * **/
     private void setUpEqualButton(int bId) {
         Button button = findViewById(bId);
         button.setOnClickListener(new View.OnClickListener() {
@@ -100,6 +117,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * method: set up Numbers buttons
+     * @ Param: int bId
+     *     - the AC(clear) buttons id on the apps xml. ex: bId = ac => button "AC".
+     * **/
     private void setUpACButton(int bId) {
         Button button = findViewById(bId);
         button.setOnClickListener(new View.OnClickListener() {
@@ -110,6 +132,4 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
-
 }
