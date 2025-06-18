@@ -64,13 +64,20 @@ public class ButtonClick_impl implements ButtonClick {
      *      input a number
      *      1. if the user input no number still.
      *      2. or if the user input a number after a arithmetic operator.(before input "=").
+     *      3. if the user input a new number after end the calculates, reset the display and all calculate steps.
      ***/
     private void onNumberClick(String digit) {
         String currentNumber = calculateLogic.getCurrentNumber();
         String operator = operators.getOperator();
         boolean isInputNum = calculateLogic.getIsInputNum();
 
-        if (!isInputNum || currentNumber.equals("0") || !operator.isEmpty()) {
+        if (operator.equals("=")) { // if you input a number after calculate.
+            textDisplay.clearDisplay(); // reset display
+            calculateLogic.setCurrentNumber(digit); // set a new number
+            calculateLogic.setIsInputNum(true); // input state allows
+            operators.setOperator(""); // reset operators
+
+        } else if (!isInputNum || currentNumber.equals("0") || !operator.isEmpty()) {
             calculateLogic.setCurrentNumber(digit);
             if (!isInputNum || currentNumber.equals("0")) {
                 calculateLogic.setIsInputNum(true);
@@ -121,9 +128,7 @@ public class ButtonClick_impl implements ButtonClick {
         calculateLogic.setStoredNumber(result);
         operators.setOperator("=");
         calculateLogic.setIsInputNum(false);
-
         textDisplay.setDisplay(finalResult); // show only the calculate result on the display.
-        //textDisplay.callShowingDisplay(); // update the display.
     }
 
     // method: Ac button click => clear the display.

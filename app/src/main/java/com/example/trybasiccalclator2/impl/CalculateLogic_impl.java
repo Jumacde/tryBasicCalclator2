@@ -9,7 +9,7 @@ public class CalculateLogic_impl implements CalculateLogic {
     private String calcStep;
     private double calcResult;
     private double cNum;
-    private boolean isInputNum;
+    private boolean isInputNum; // input state. true => allow input, false => reject input
 
     public CalculateLogic_impl() {
         this.currentNumber = "0";
