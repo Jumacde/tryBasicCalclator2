@@ -95,6 +95,10 @@ public class ButtonClick_impl implements ButtonClick {
      * - premise this methods: the user has been inputted a number and input a arithmetic operator.
      * < about this method >
      *     if the user inout a number, you can input a arithmetic operator(+, -, *, /).
+     *     if you input a arithmetic operator after calculate, you can calculate still.
+     *     ex: 1 + 1 = 2
+     *     you input * and a number
+     *     1 + 1 = 2 * 3
      ***/
     private void onOperatorCLick(String op) {
         String operator = operators.getOperator();
@@ -104,13 +108,15 @@ public class ButtonClick_impl implements ButtonClick {
         String currentNumber = calculateLogic.getCurrentNumber();
         double cNum = Double.parseDouble(currentNumber);
 
-        if (!operator.isEmpty() && isInputNum) {
+        if (operator.equals("=")) {
+            // nothing to do here.
+        } else if (!operator.isEmpty() && isInputNum) {
             calculateLogic.callCalculate(operators);
             calculateLogic.setStoredNumber(result);
         } else {
             calculateLogic.setStoredNumber(cNum);
         }
-        operators.setOperator(op);
+        operators.setOperator(op); // store a new arithmetic operator.
         calculateLogic.setCurrentNumber("0");
         calculateLogic.setIsInputNum(false);
         textDisplay.callShowingDisplay(); // update the display.
