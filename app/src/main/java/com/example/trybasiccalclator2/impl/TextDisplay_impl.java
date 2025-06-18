@@ -1,5 +1,7 @@
 package com.example.trybasiccalclator2.impl;
 
+import android.annotation.SuppressLint;
+
 import com.example.trybasiccalclator2.CalculateLogic;
 import com.example.trybasiccalclator2.Operators;
 import com.example.trybasiccalclator2.TextDisplay;
@@ -56,11 +58,9 @@ public class TextDisplay_impl implements TextDisplay {
      * */
     private void showingDisplay() {
         String currentNumber = calculateLogic.getCurrentNumber();
-        //double cNum = calculateLogic.getCNum();
         double storedNumber = calculateLogic.getStoredNumber();
         String operator = operators.getOperator();
         double result = calculateLogic.getCalcResult(); // ex: calcResult = storedNumber + cNum;
-        String step = calculateLogic.getCalcStep(); // calcStep = storedNumber + operator + cNum;
         boolean isInputNum = calculateLogic.getIsInputNum(); // true
 
         if (operator.equals("=")) { // if the user enter "=", shows the calculate result on the display.
@@ -79,6 +79,7 @@ public class TextDisplay_impl implements TextDisplay {
      * @ param: double num
      * - set each number(storedNumber)
      * **/
+    @SuppressLint("DefaultLocale")
     private String formatNumber(double num) {
         if (num == (long) num) {
             return String.format("%d", (long) num);

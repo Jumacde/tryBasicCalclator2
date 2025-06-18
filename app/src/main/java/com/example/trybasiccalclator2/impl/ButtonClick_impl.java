@@ -96,8 +96,6 @@ public class ButtonClick_impl implements ButtonClick {
 
         String currentNumber = calculateLogic.getCurrentNumber();
         double cNum = Double.parseDouble(currentNumber);
-        double storedNumber = calculateLogic.getStoredNumber();
-        String sNum = String.valueOf(storedNumber);
 
         if (!operator.isEmpty() && isInputNum) {
             calculateLogic.callCalculate(operators);
