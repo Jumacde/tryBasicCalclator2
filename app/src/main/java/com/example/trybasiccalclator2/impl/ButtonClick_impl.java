@@ -119,11 +119,13 @@ public class ButtonClick_impl implements ButtonClick {
     private void onEqualClick() {
         calculateLogic.callCalculate(operators);
         double result = calculateLogic.getCalcResult();
+        String finalResult = String.valueOf(result);
         calculateLogic.setStoredNumber(result);
         operators.setOperator("=");
         calculateLogic.setIsInputNum(false);
 
-        textDisplay.callShowingDisplay(); // update the display.
+        textDisplay.setDisplay(finalResult); // show only the calculate result on the display.
+        //textDisplay.callShowingDisplay(); // update the display.
     }
 
     // method: Ac button click => clear the display.
