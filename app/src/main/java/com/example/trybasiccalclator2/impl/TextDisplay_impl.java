@@ -51,11 +51,13 @@ public class TextDisplay_impl implements TextDisplay {
      * method: define the showing calculate-step and -result on the display
      * @ param: calculateLogic, operators
      * - call variables from other classes via calling the interface classes.
+     * 1. if the user input "=", shows the display you the calculate result.
+     * 2. if the user input a arithmetic operator(+, -, *, /) or only a number, shows you the calculate step.
      * */
     private void showingDisplay() {
         String currentNumber = calculateLogic.getCurrentNumber();
         //double cNum = calculateLogic.getCNum();
-        //double storedNumber = calculateLogic.getStoredNumber();
+        double storedNumber = calculateLogic.getStoredNumber();
         String operator = operators.getOperator();
         double result = calculateLogic.getCalcResult(); // ex: calcResult = storedNumber + cNum;
         String step = calculateLogic.getCalcStep(); // calcStep = storedNumber + operator + cNum;
@@ -63,13 +65,28 @@ public class TextDisplay_impl implements TextDisplay {
 
         if (operator.equals("=")) { // if the user enter "=", shows the calculate result on the display.
             display = String.valueOf(result); // showing the inputted number and the calculate step
-        } else if (isInputNum) { // if the user inputted only a number.
-            this.display = currentNumber;
-        } else if (!operator.isEmpty()) {
-            display = step;
+        } else if (!operator.isEmpty() && !isInputNum) { // if only a arithmetic operator is there.
+            display = formatNumber(storedNumber) + operator;
+        } else if (!operator.isEmpty() && isInputNum) { // if the user inputted only a number.
+            display = formatNumber(storedNumber) + operator + currentNumber;
         } else {
-            this.display = currentNumber;
+            display = currentNumber;
         }
+    }
+
+    /**
+     * - method: float number format to a integer
+     * @ param: double num
+     * - set each number(storedNumber)
+     * **/
+    private String formatNumber(double num) {
+        if (num == (long) num) {
+            return String.format("%d", (long) num);
+        } else {
+            return String.format("%s", num);
+        }
+
+
     }
 
 }
