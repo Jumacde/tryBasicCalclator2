@@ -17,7 +17,7 @@ public class CalculateLogic_impl implements CalculateLogic {
         this.calcStep = "";
         this.calcResult = 0;
         this.cNum = 0;
-        this.isInputNum = true;
+        this.isInputNum = false;
     }
 
     @Override

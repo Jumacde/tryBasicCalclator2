@@ -109,16 +109,19 @@ public class ButtonClick_impl implements ButtonClick {
         String currentNumber = calculateLogic.getCurrentNumber();
         double cNum = Double.parseDouble(currentNumber);
 
-        if (!operator.equals("=") && isInputNum) {
-            calculateLogic.callCalculate(operators);
-            calculateLogic.setStoredNumber(result);
-        } else if (operator.equals("=")) {
-            // nothing to do here.
+        if (isInputNum) {
+            if (!operator.equals("=")) {
+                calculateLogic.callCalculate(operators);
+                calculateLogic.setStoredNumber(result);
+            }
         } else {
-            calculateLogic.setStoredNumber(cNum);
+            if (!currentNumber.equals("0")) {
+                calculateLogic.setStoredNumber(cNum);
+            }
         }
+
         operators.setOperator(op); // store a new arithmetic operator.
-        //calculateLogic.setCurrentNumber("0");
+        calculateLogic.setCurrentNumber("0");
         calculateLogic.setIsInputNum(false);
         textDisplay.callShowingDisplay(); // update the display.
     }

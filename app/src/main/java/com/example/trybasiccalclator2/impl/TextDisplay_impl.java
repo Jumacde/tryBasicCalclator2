@@ -47,7 +47,7 @@ public class TextDisplay_impl implements TextDisplay {
      * */
     @Override
     public void callShowingDisplay() {
-        showingDisplay();
+        showDisplay();
     }
 
     /**
@@ -57,7 +57,7 @@ public class TextDisplay_impl implements TextDisplay {
      * 1. if the user input "=", shows the display you the calculate result.
      * 2. if the user input a arithmetic operator(+, -, *, /) or only a number, shows you the calculate step.
      * */
-    private void showingDisplay() {
+    private void showDisplay() {
         String currentNumber = calculateLogic.getCurrentNumber();
         double storedNumber = calculateLogic.getStoredNumber();
         String operator = operators.getOperator();
@@ -67,10 +67,10 @@ public class TextDisplay_impl implements TextDisplay {
 
         if (operator.equals("=")) { // if the user enter "=", shows the calculate result on the display.
             display = formatNumber(result); // showing the inputted number and the calculate step
+        }  else if (!operator.isEmpty() && isInputNum) { // if the user inputted only a number.
+            display = formatNumber(storedNumber) + operator + currentNumber;
         } else if (!operator.isEmpty() && !isInputNum) { // if only a arithmetic operator is there.
             display = formatNumber(storedNumber) + operator;
-        } else if (!operator.isEmpty() && isInputNum) { // if the user inputted only a number.
-            display = formatNumber(storedNumber) + operator + currentNumber;
         } else {
             display = currentNumber;
         }
