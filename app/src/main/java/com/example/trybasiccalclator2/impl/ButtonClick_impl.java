@@ -87,6 +87,7 @@ public class ButtonClick_impl implements ButtonClick {
      * - this value works to set a inputted arithmetic operator.
      * - premise this methods: the user has been inputted a number and input a arithmetic operator.
      * < about this method >
+     *     if the user inout a number, you can input a arithmetic operator(+, -, *, /).
      ***/
     private void onOperatorCLick(String op) {
         String operator = operators.getOperator();
