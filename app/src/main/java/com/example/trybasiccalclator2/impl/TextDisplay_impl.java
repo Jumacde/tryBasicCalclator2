@@ -37,6 +37,7 @@ public class TextDisplay_impl implements TextDisplay {
         this.calculateLogic.setCalcResult(0);
         this.calculateLogic.setCalcStep("");
         this.operators.setOperator("");
+        this.calculateLogic.setIsInputNum(false);
     }
 
     /**
@@ -61,10 +62,11 @@ public class TextDisplay_impl implements TextDisplay {
         double storedNumber = calculateLogic.getStoredNumber();
         String operator = operators.getOperator();
         double result = calculateLogic.getCalcResult(); // ex: calcResult = storedNumber + cNum;
+        String finalResult = String.valueOf(result);
         boolean isInputNum = calculateLogic.getIsInputNum(); // true
 
         if (operator.equals("=")) { // if the user enter "=", shows the calculate result on the display.
-            display = String.valueOf(result); // showing the inputted number and the calculate step
+            display = formatNumber(result); // showing the inputted number and the calculate step
         } else if (!operator.isEmpty() && !isInputNum) { // if only a arithmetic operator is there.
             display = formatNumber(storedNumber) + operator;
         } else if (!operator.isEmpty() && isInputNum) { // if the user inputted only a number.

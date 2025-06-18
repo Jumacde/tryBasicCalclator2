@@ -76,14 +76,15 @@ public class ButtonClick_impl implements ButtonClick {
             calculateLogic.setCurrentNumber(digit); // set a new number
             calculateLogic.setIsInputNum(true); // input state allows
             operators.setOperator(""); // reset operators
-
-        } else if (!isInputNum || currentNumber.equals("0") || !operator.isEmpty()) {
+        } else if (!operator.isEmpty() && !isInputNum) {
             calculateLogic.setCurrentNumber(digit);
-            if (!isInputNum || currentNumber.equals("0")) {
-                calculateLogic.setIsInputNum(true);
-            }
+            calculateLogic.setIsInputNum(true);
+        } else if (currentNumber.equals("0")) {
+            calculateLogic.setCurrentNumber(digit);
+            calculateLogic.setIsInputNum(true);
         } else {
             calculateLogic.setCurrentNumber(currentNumber + digit);
+            calculateLogic.setIsInputNum(true);
         }
         textDisplay.callShowingDisplay(); // update the display
     }
@@ -108,16 +109,16 @@ public class ButtonClick_impl implements ButtonClick {
         String currentNumber = calculateLogic.getCurrentNumber();
         double cNum = Double.parseDouble(currentNumber);
 
-        if (operator.equals("=")) {
-            // nothing to do here.
-        } else if (!operator.isEmpty() && isInputNum) {
+        if (!operator.equals("=") && isInputNum) {
             calculateLogic.callCalculate(operators);
             calculateLogic.setStoredNumber(result);
+        } else if (operator.equals("=")) {
+            // nothing to do here.
         } else {
             calculateLogic.setStoredNumber(cNum);
         }
         operators.setOperator(op); // store a new arithmetic operator.
-        calculateLogic.setCurrentNumber("0");
+        //calculateLogic.setCurrentNumber("0");
         calculateLogic.setIsInputNum(false);
         textDisplay.callShowingDisplay(); // update the display.
     }
