@@ -130,7 +130,7 @@ public class ButtonClick_impl implements ButtonClick {
 
     // method: Ac button click => clear the display.
     private void onACClick() {
-        textDisplay.displayClear(); // clear the display.
+        textDisplay.clearDisplay(); // clear the display.
     }
 
 }

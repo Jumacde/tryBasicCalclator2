@@ -12,7 +12,7 @@ public class TextDisplay_impl implements TextDisplay {
     public TextDisplay_impl(CalculateLogic calculateLogic,Operators operators) {
         this.calculateLogic = calculateLogic;
         this.operators = operators;
-        displayClear(); // initialize showing the displays using this method.
+        clearDisplay(); // initialize showing the displays using this method.
     }
 
     @Override
@@ -27,7 +27,7 @@ public class TextDisplay_impl implements TextDisplay {
 
     // method: clear display
     @Override
-    public void displayClear() {
+    public void clearDisplay() {
         this.display = "0";
         this.calculateLogic.setCurrentNumber("0");
         this.calculateLogic.setCNum(0);
@@ -85,8 +85,6 @@ public class TextDisplay_impl implements TextDisplay {
         } else {
             return String.format("%s", num);
         }
-
-
     }
 
 }
