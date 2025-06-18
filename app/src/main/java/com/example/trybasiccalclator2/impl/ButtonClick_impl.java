@@ -61,16 +61,20 @@ public class ButtonClick_impl implements ButtonClick {
      * @ Param: String digit
      * - this value works to set a additional digit
      *  < about this method >
-     *      String currentNumber:
-     *  using
+     *      input a number
+     *      1. if the user input no number still.
+     *      2. or if the user input a number after a arithmetic operator.(before input "=").
      ***/
     private void onNumberClick(String digit) {
         String currentNumber = calculateLogic.getCurrentNumber();
-        double storedNumber = calculateLogic.getStoredNumber();
+        String operator = operators.getOperator();
         boolean isInputNum = calculateLogic.getIsInputNum();
 
-        if (!isInputNum || currentNumber.equals("0")) {
+        if (!isInputNum || currentNumber.equals("0") || !operator.isEmpty()) {
             calculateLogic.setCurrentNumber(digit);
+            if (!isInputNum || currentNumber.equals("0")) {
+                calculateLogic.setIsInputNum(true);
+            }
         } else {
             calculateLogic.setCurrentNumber(currentNumber + digit);
         }
